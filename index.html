@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Portafolio</title>
+
+
+    <style>
+
+        /* ================================
+           CONFIGURACIÓN GENERAL
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+
+        /* ================================
+           ENCABEZADO
+        ================================= */
+
+        header {
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+
+        /* ================================
+           MENÚ
+        ================================= */
+
+        nav {
+            background-color: #172554;
+
+            padding: 18px;
+
+            text-align: center;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            margin: 0 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+
+        /* ================================
+           CONTENIDO
+        ================================= */
+
+        main {
+            width: 90%;
+
+            max-width: 1000px;
+
+            margin: 30px auto;
+        }
+
+
+        /* ================================
+           SECCIONES
+        ================================= */
+
+        section {
+            background-color: white;
+
+            padding: 30px;
+
+            margin-bottom: 25px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 15px
+                rgba(0, 0, 0, 0.08);
+
+            scroll-margin-top: 90px;
+        }
+
+        section h2 {
+            color: #2563eb;
+
+            margin-bottom: 20px;
+
+            border-bottom: 3px solid #2563eb;
+
+            padding-bottom: 8px;
+        }
+
+
+        /* ================================
+           PRESENTACIÓN
+        ================================= */
+
+        .presentacion {
+            text-align: center;
+        }
+
+        .foto {
+            width: 150px;
+
+            height: 150px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            display: block;
+
+            margin: 0 auto 20px auto;
+
+            border: 5px solid #2563eb;
+        }
+
+        .presentacion h3 {
+            font-size: 28px;
+
+            color: #1e3a8a;
+
+            margin-bottom: 15px;
+        }
+
+        .presentacion p {
+            line-height: 1.6;
+        }
+
+
+        /* ================================
+           TARJETAS
+        ================================= */
+
+        .tarjetas {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(250px, 1fr)
+                );
+
+            gap: 20px;
+        }
+
+        .tarjeta {
+            background-color: #eff6ff;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            border-left: 5px solid #2563eb;
+
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 5px 15px
+                rgba(37, 99, 235, 0.15);
+        }
+
+        .tarjeta h3 {
+            color: #1e40af;
+
+            margin-bottom: 10px;
+        }
+
+        .tarjeta p {
+            line-height: 1.6;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* ================================
+           FECHAS
+        ================================= */
+
+        .fecha {
+            color: #64748b;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           LISTAS
+        ================================= */
+
+        .funciones {
+            padding-left: 20px;
+
+            margin-top: 10px;
+        }
+
+        .funciones li {
+            margin-bottom: 6px;
+        }
+
+
+        /* ================================
+           BOTONES
+        ================================= */
+
+        .boton {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 12px 20px;
+
+            background-color: #2563eb;
+
+            color: white;
+
+            text-decoration: none;
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background-color: #1d4ed8;
+
+            transform: translateY(-2px);
+        }
+
+        .boton-agregar {
+            background-color: #16a34a;
+        }
+
+        .boton-agregar:hover {
+            background-color: #15803d;
+        }
+
+        .boton-eliminar {
+            background-color: #dc2626;
+
+            margin-left: 5px;
+        }
+
+        .boton-eliminar:hover {
+            background-color: #b91c1c;
+        }
+
+        .boton-cancelar {
+            background-color: #64748b;
+        }
+
+        .boton-cancelar:hover {
+            background-color: #475569;
+        }
+
+
+        /* ================================
+           CONTENEDOR DEL BOTÓN
+        ================================= */
+
+        .contenedor-boton {
+            text-align: center;
+
+            margin-top: 25px;
+        }
+
+
+        /* ================================
+           FORMULARIOS
+        ================================= */
+
+        .formulario {
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            background-color: #eff6ff;
+
+            border: 2px solid #2563eb;
+
+            border-radius: 12px;
+        }
+
+        .formulario.mostrar {
+            display: block;
+        }
+
+        .formulario h3 {
+            color: #1e40af;
+
+            margin-bottom: 20px;
+        }
+
+        .formulario label {
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 5px;
+
+            color: #1e3a8a;
+        }
+
+        .formulario input,
+        .formulario textarea,
+        .formulario select {
+            width: 100%;
+
+            padding: 12px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 8px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 15px;
+        }
+
+        .formulario textarea {
+            min-height: 100px;
+
+            resize: vertical;
+        }
+
+
+        /* ================================
+           HABILIDADES
+        ================================= */
+
+        .habilidades {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .habilidad {
+            background-color: #2563eb;
+
+            color: white;
+
+            padding: 10px 16px;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+        .eliminar-habilidad {
+            background: transparent;
+
+            color: white;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            font-size: 16px;
+        }
+
+
+        /* ================================
+           CONTACTO
+        ================================= */
+
+        .contacto p {
+            margin-bottom: 12px;
+        }
+
+
+        /* ================================
+           MENSAJE
+        ================================= */
+
+        #mensaje {
+            display: none;
+
+            position: fixed;
+
+            top: 20px;
+
+            right: 20px;
+
+            background-color: #16a34a;
+
+            color: white;
+
+            padding: 15px 20px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 5px 15px
+                rgba(0, 0, 0, 0.2);
+
+            z-index: 2000;
+        }
+
+        #mensaje.mostrar {
+            display: block;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background-color: #172554;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================================
+           CELULARES
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            header p {
+                font-size: 17px;
+            }
+
+            nav {
+                position: static;
+            }
+
+            nav a {
+                display: block;
+
+                margin: 10px;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         ENCABEZADO
+    ================================== -->
+
+    <header>
+
+        <h1>
+            Mi Portafolio
+        </h1>
+
+        <p>
+            Estudiante de Desarrollo de Software
+        </p>
+
+    </header>
+
+
+    <!-- =================================
+         MENÚ
+    ================================== -->
+
+    <nav>
+
+        <a href="#presentacion">
+            Presentación
+        </a>
+
+        <a href="#academico">
+            Formación
+        </a>
+
+        <a href="#experiencia">
+            Experiencia
+        </a>
+
+        <a href="#habilidades">
+            Habilidades
+        </a>
+
+        <a href="#proyectos">
+            Proyectos
+        </a>
+
+        <a href="#contacto">
+            Contacto
+        </a>
+
+    </nav>
+
+
+    <!-- =================================
+         CONTENIDO PRINCIPAL
+    ================================== -->
+
+    <main>
+
+
+        <!-- =================================
+             PRESENTACIÓN
+        ================================== -->
+
+        <section
+            id="presentacion"
+            class="presentacion">
+
+            <h2>
+                Presentación
+            </h2>
+
+            <img
+                class="foto"
+                src="https://i.pravatar.cc/160?img=12"
+                alt="Foto de perfil">
+
+
+            <h3>
+                Hola, soy Juan
+            </h3>
+
+            <p>
+                Soy estudiante de desarrollo de software,
+                interesado en la tecnología y el desarrollo web.
+            </p>
+
+            <br>
+
+            <p>
+                En este portafolio encontrarás información
+                sobre mi formación académica, experiencia,
+                habilidades, proyectos y contacto.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             HISTORIAL ACADÉMICO
+        ================================== -->
+
+        <section id="academico">
+
+            <h2>
+                Historial Académico
+            </h2>
+
+
+            <div
+                class="tarjetas"
+                id="listaAcademica">
+
+
+                <div class="tarjeta">
+
+                    <h3>
+                        Desarrollo de Software
+                    </h3>
+
+                    <p class="fecha">
+                        Actualmente
+                    </p>
+
+                    <p>
+                        Actualmente estudio Desarrollo de Software,
+                        adquiriendo conocimientos en programación,
+                        bases de datos y desarrollo web.
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>
+                        Educación Media
+                    </h3>
+
+                    <p class="fecha">
+                        Formación académica
+                    </p>
+
+                    <p>
+                        Formación académica básica y media,
+                        desarrollando habilidades de comunicación,
+                        pensamiento lógico y trabajo en equipo.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="contenedor-boton">
+
+                <button
+                    class="boton boton-agregar"
+                    onclick="mostrarFormulario('formAcademico')">
+
+                    + Agregar formación
+
+                </button>
+
+            </div>
+
+
+            <!-- FORMULARIO ACADÉMICO -->
+
+            <div
+                id="formAcademico"
+                class="formulario">
+
+                <h3>
+                    Agregar formación académica
+                </h3>
+
+
+                <label>
+                    Título o estudio
+                </label>
+
+                <input
+                    type="text"
+                    id="academicoTitulo"
+                    placeholder="Ej: Ingeniería de Sistemas">
+
+
+                <label>
+                    Institución
+                </label>
+
+                <input
+                    type="text"
+                    id="academicoInstitucion"
+                    placeholder="Ej: Universidad ABC">
+
+
+                <label>
+                    Año o período
+                </label>
+
+                <input
+                    type="text"
+                    id="academicoFecha"
+                    placeholder="Ej: 2024 - 2026">
+
+
+                <label>
+                    Descripción
+                </label>
+
+                <textarea
+                    id="academicoDescripcion"
+                    placeholder="Describe tus estudios">
+                </textarea>
+
+
+                <button
+                    class="boton"
+                    onclick="agregarAcademico()">
+
+                    Guardar
+
+                </button>
+
+
+                <button
+                    class="boton boton-cancelar"
+                    onclick="cerrarFormulario('formAcademico')">
+
+                    Cancelar
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             HISTORIAL LABORAL
+        ================================== -->
+
+        <section id="experiencia">
+
+            <h2>
+                Historial Laboral
+            </h2>
+
+
+            <div
+                class="tarjetas"
+                id="listaLaboral">
+
+
+                <div class="tarjeta">
+
+                    <h3>
+                        Auxiliar de Tecnología
+                    </h3>
+
+                    <p class="fecha">
+                        Empresa XYZ | 2025 - 2026
+                    </p>
+
+                    <p>
+                        Apoyo en actividades relacionadas con
+                        mantenimiento de equipos y soporte tecnológico.
+                    </p>
+
+
+                    <strong>
+                        Funciones:
+                    </strong>
+
+                    <ul class="funciones">
+
+                        <li>
+                            Mantenimiento de computadores.
+                        </li>
+
+                        <li>
+                            Instalación de programas.
+                        </li>
+
+                        <li>
+                            Soporte a usuarios.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>
+                        Practicante de Desarrollo Web
+                    </h3>
+
+                    <p class="fecha">
+                        Proyecto académico | 2026
+                    </p>
+
+                    <p>
+                        Participación en la creación de páginas
+                        web utilizando HTML, CSS y JavaScript.
+                    </p>
+
+
+                    <strong>
+                        Funciones:
+                    </strong>
+
+                    <ul class="funciones">
+
+                        <li>
+                            Creación de páginas HTML.
+                        </li>
+
+                        <li>
+                            Diseño con CSS.
+                        </li>
+
+                        <li>
+                            Programación con JavaScript.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="contenedor-boton">
+
+                <button
+                    class="boton boton-agregar"
+                    onclick="mostrarFormulario('formLaboral')">
+
+                    + Agregar experiencia
+
+                </button>
+
+            </div>
+
+
+            <!-- FORMULARIO LABORAL -->
+
+            <div
+                id="formLaboral"
+                class="formulario">
+
+                <h3>
+                    Agregar experiencia laboral
+                </h3>
+
+
+                <label>
+                    Cargo
+                </label>
+
+                <input
+                    type="text"
+                    id="laboralCargo"
+                    placeholder="Ej: Auxiliar de Sistemas">
+
+
+                <label>
+                    Empresa
+                </label>
+
+                <input
+                    type="text"
+                    id="laboralEmpresa"
+                    placeholder="Ej: Empresa ABC">
+
+
+                <label>
+                    Fecha
+                </label>
+
+                <input
+                    type="text"
+                    id="laboralFecha"
+                    placeholder="Ej: 2026 - 2027">
+
+
+                <label>
+                    Descripción
+                </label>
+
+                <textarea
+                    id="laboralDescripcion"
+                    placeholder="Describe tu experiencia">
+                </textarea>
+
+
+                <label>
+                    Funciones
+                </label>
+
+                <textarea
+                    id="laboralFunciones"
+                    placeholder="Escribe las funciones separadas por comas">
+                </textarea>
+
+
+                <button
+                    class="boton"
+                    onclick="agregarLaboral()">
+
+                    Guardar
+
+                </button>
+
+
+                <button
+                    class="boton boton-cancelar"
+                    onclick="cerrarFormulario('formLaboral')">
+
+                    Cancelar
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             HABILIDADES
+        ================================== -->
+
+        <section id="habilidades">
+
+            <h2>
+                Mis Habilidades
+            </h2>
+
+
+            <div
+                class="habilidades"
+                id="listaHabilidades">
+
+
+                <span class="habilidad">
+                    HTML
+                </span>
+
+                <span class="habilidad">
+                    CSS
+                </span>
+
+                <span class="habilidad">
+                    JavaScript
+                </span>
+
+                <span class="habilidad">
+                    Python
+                </span>
+
+                <span class="habilidad">
+                    Bases de Datos
+                </span>
+
+                <span class="habilidad">
+                    Git
+                </span>
+
+                <span class="habilidad">
+                    Trabajo en equipo
+                </span>
+
+                <span class="habilidad">
+                    Resolución de problemas
+                </span>
+
+
+            </div>
+
+
+            <div class="contenedor-boton">
+
+                <button
+                    class="boton boton-agregar"
+                    onclick="mostrarFormulario('formHabilidad')">
+
+                    + Agregar habilidad
+
+                </button>
+
+            </div>
+
+
+            <!-- FORMULARIO HABILIDAD -->
+
+            <div
+                id="formHabilidad"
+                class="formulario">
+
+                <h3>
+                    Agregar habilidad
+                </h3>
+
+
+                <label>
+                    Nueva habilidad
+                </label>
+
+                <input
+                    type="text"
+                    id="nuevaHabilidad"
+                    placeholder="Ej: React">
+
+
+                <button
+                    class="boton"
+                    onclick="agregarHabilidad()">
+
+                    Agregar
+
+                </button>
+
+
+                <button
+                    class="boton boton-cancelar"
+                    onclick="cerrarFormulario('formHabilidad')">
+
+                    Cancelar
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PROYECTOS
+        ================================== -->
+
+        <section id="proyectos">
+
+            <h2>
+                Mis Proyectos
+            </h2>
+
+
+            <div
+                class="tarjetas"
+                id="listaProyectos">
+
+
+                <div class="tarjeta">
+
+                    <h3>
+                        🌐 Página Web
+                    </h3>
+
+                    <p>
+                        Proyecto de creación de una página web
+                        utilizando HTML y CSS.
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>
+                        💻 Proyecto de Programación
+                    </h3>
+
+                    <p>
+                        Desarrollo de un proyecto académico
+                        aplicando conceptos de programación.
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>
+                        🗄️ Base de Datos
+                    </h3>
+
+                    <p>
+                        Proyecto para almacenar y administrar
+                        información mediante una base de datos.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="contenedor-boton">
+
+                <button
+                    class="boton boton-agregar"
+                    onclick="mostrarFormulario('formProyecto')">
+
+                    + Agregar proyecto
+
+                </button>
+
+            </div>
+
+
+            <!-- FORMULARIO PROYECTO -->
+
+            <div
+                id="formProyecto"
+                class="formulario">
+
+                <h3>
+                    Agregar proyecto
+                </h3>
+
+
+                <label>
+                    Nombre del proyecto
+                </label>
+
+                <input
+                    type="text"
+                    id="proyectoNombre"
+                    placeholder="Ej: Sistema de ventas">
+
+
+                <label>
+                    Tecnología utilizada
+                </label>
+
+                <input
+                    type="text"
+                    id="proyectoTecnologia"
+                    placeholder="Ej: HTML, CSS, JavaScript">
+
+
+                <label>
+                    Descripción
+                </label>
+
+                <textarea
+                    id="proyectoDescripcion"
+                    placeholder="Describe tu proyecto">
+                </textarea>
+
+
+                <label>
+                    Enlace del proyecto
+                </label>
+
+                <input
+                    type="url"
+                    id="proyectoEnlace"
+                    placeholder="https://...">
+
+
+                <button
+                    class="boton"
+                    onclick="agregarProyecto()">
+
+                    Guardar
+
+                </button>
+
+
+                <button
+                    class="boton boton-cancelar"
+                    onclick="cerrarFormulario('formProyecto')">
+
+                    Cancelar
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             CONTACTO
+        ================================== -->
+
+        <section
+            id="contacto"
+            class="contacto">
+
+            <h2>
+                Contacto
+            </h2>
+
+
+            <div id="datosContacto">
+
+                <p>
+                    📧
+                    <strong>
+                        Correo:
+                    </strong>
+
+                    <span id="correoContacto">
+                        juan@email.com
+                    </span>
+                </p>
+
+
+                <p>
+                    📱
+                    <strong>
+                        Teléfono:
+                    </strong>
+
+                    <span id="telefonoContacto">
+                        +57 300 000 0000
+                    </span>
+                </p>
+
+
+                <p>
+                    📍
+                    <strong>
+                        Ciudad:
+                    </strong>
+
+                    <span id="ciudadContacto">
+                        Colombia
+                    </span>
+                </p>
+
+            </div>
+
+
+            <a
+                id="botonCorreo"
+                class="boton"
+                href="mailto:juan@email.com">
+
+                Contactarme
+
+            </a>
+
+
+            <div class="contenedor-boton">
+
+                <button
+                    class="boton boton-agregar"
+                    onclick="mostrarFormulario('formContacto')">
+
+                    + Agregar / Editar contacto
+
+                </button>
+
+            </div>
+
+
+            <!-- FORMULARIO CONTACTO -->
+
+            <div
+                id="formContacto"
+                class="formulario">
+
+                <h3>
+                    Información de contacto
+                </h3>
+
+
+                <label>
+                    Correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    id="nuevoCorreo"
+                    placeholder="Ej: correo@gmail.com">
+
+
+                <label>
+                    Teléfono
+                </label>
+
+                <input
+                    type="text"
+                    id="nuevoTelefono"
+                    placeholder="Ej: +57 300 000 0000">
+
+
+                <label>
+                    Ciudad
+                </label>
+
+                <input
+                    type="text"
+                    id="nuevaCiudad"
+                    placeholder="Ej: Cali, Colombia">
+
+
+                <button
+                    class="boton"
+                    onclick="guardarContacto()">
+
+                    Guardar contacto
+
+                </button>
+
+
+                <button
+                    class="boton boton-cancelar"
+                    onclick="cerrarFormulario('formContacto')">
+
+                    Cancelar
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         MENSAJE
+    ================================== -->
+
+    <div id="mensaje">
+        Información guardada correctamente.
+    </div>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Juan - Mi Portafolio
+        </p>
+
+        <p>
+            Desarrollado con HTML, CSS y JavaScript
+        </p>
+
+    </footer>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+
+        /* =================================
+           MOSTRAR FORMULARIO
+        ================================= */
+
+        function mostrarFormulario(id) {
+
+            const formulario =
+                document.getElementById(id);
+
+            formulario.classList.add("mostrar");
+
+            formulario.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+
+
+        /* =================================
+           CERRAR FORMULARIO
+        ================================= */
+
+        function cerrarFormulario(id) {
+
+            const formulario =
+                document.getElementById(id);
+
+            formulario.classList.remove("mostrar");
+
+        }
+
+
+        /* =================================
+           MENSAJE
+        ================================= */
+
+        function mostrarMensaje(texto) {
+
+            const mensaje =
+                document.getElementById("mensaje");
+
+            mensaje.textContent = texto;
+
+            mensaje.classList.add("mostrar");
+
+            setTimeout(function() {
+
+                mensaje.classList.remove("mostrar");
+
+            }, 2500);
+
+        }
+
+
+        /* =================================
+           HISTORIAL ACADÉMICO
+        ================================= */
+
+        function agregarAcademico() {
+
+            const titulo =
+                document.getElementById(
+                    "academicoTitulo"
+                ).value.trim();
+
+            const institucion =
+                document.getElementById(
+                    "academicoInstitucion"
+                ).value.trim();
+
+            const fecha =
+                document.getElementById(
+                    "academicoFecha"
+                ).value.trim();
+
+            const descripcion =
+                document.getElementById(
+                    "academicoDescripcion"
+                ).value.trim();
+
+
+            if (
+                titulo === "" ||
+                institucion === "" ||
+                fecha === "" ||
+                descripcion === ""
+            ) {
+
+                alert(
+                    "Completa todos los campos académicos."
+                );
+
+                return;
+
+            }
+
+
+            const tarjeta =
+                document.createElement("div");
+
+            tarjeta.className = "tarjeta";
+
+            tarjeta.innerHTML = `
+
+                <h3>
+                    ${escapar(titulo)}
+                </h3>
+
+                <p class="fecha">
+                    ${escapar(institucion)}
+                    |
+                    ${escapar(fecha)}
+                </p>
+
+                <p>
+                    ${escapar(descripcion)}
+                </p>
+
+                <button
+                    class="boton boton-eliminar"
+                    onclick="eliminarElemento(this)">
+
+                    Eliminar
+
+                </button>
+
+            `;
+
+
+            document
+                .getElementById("listaAcademica")
+                .appendChild(tarjeta);
+
+
+            cerrarFormulario("formAcademico");
+
+            guardarTodo();
+
+            limpiarCampos([
+                "academicoTitulo",
+                "academicoInstitucion",
+                "academicoFecha",
+                "academicoDescripcion"
+            ]);
+
+            mostrarMensaje(
+                "Formación académica agregada."
+            );
+
+        }
+
+
+
+        /* =================================
+           HISTORIAL LABORAL
+        ================================= */
+
+        function agregarLaboral() {
+
+            const cargo =
+                document.getElementById(
+                    "laboralCargo"
+                ).value.trim();
+
+            const empresa =
+                document.getElementById(
+                    "laboralEmpresa"
+                ).value.trim();
+
+            const fecha =
+                document.getElementById(
+                    "laboralFecha"
+                ).value.trim();
+
+            const descripcion =
+                document.getElementById(
+                    "laboralDescripcion"
+                ).value.trim();
+
+            const funciones =
+                document.getElementById(
+                    "laboralFunciones"
+                ).value.trim();
+
+
+            if (
+                cargo === "" ||
+                empresa === "" ||
+                fecha === "" ||
+                descripcion === "" ||
+                funciones === ""
+            ) {
+
+                alert(
+                    "Completa todos los campos laborales."
+                );
+
+                return;
+
+            }
+
+
+            const listaFunciones =
+                funciones.split(",");
+
+
+            let funcionesHTML = "";
+
+
+            listaFunciones.forEach(
+                function(funcion) {
+
+                    if (funcion.trim() !== "") {
+
+                        funcionesHTML +=
+                            `<li>
+                                ${escapar(
+                                    funcion.trim()
+                                )}
+                            </li>`;
+
+                    }
+
+                }
+            );
+
+
+            const tarjeta =
+                document.createElement("div");
+
+            tarjeta.className = "tarjeta";
+
+
+            tarjeta.innerHTML = `
+
+                <h3>
+                    ${escapar(cargo)}
+                </h3>
+
+                <p class="fecha">
+                    ${escapar(empresa)}
+                    |
+                    ${escapar(fecha)}
+                </p>
+
+                <p>
+                    ${escapar(descripcion)}
+                </p>
+
+                <strong>
+                    Funciones:
+                </strong>
+
+                <ul class="funciones">
+                    ${funcionesHTML}
+                </ul>
+
+                <button
+                    class="boton boton-eliminar"
+                    onclick="eliminarElemento(this)">
+
+                    Eliminar
+
+                </button>
+
+            `;
+
+
+            document
+                .getElementById("listaLaboral")
+                .appendChild(tarjeta);
+
+
+            cerrarFormulario("formLaboral");
+
+
+            limpiarCampos([
+                "laboralCargo",
+                "laboralEmpresa",
+                "laboralFecha",
+                "laboralDescripcion",
+                "laboralFunciones"
+            ]);
+
+
+            guardarTodo();
+
+
+            mostrarMensaje(
+                "Experiencia laboral agregada."
+            );
+
+        }
+
+
+
+        /* =================================
+           HABILIDADES
+        ================================= */
+
+        function agregarHabilidad() {
+
+            const habilidad =
+                document.getElementById(
+                    "nuevaHabilidad"
+                ).value.trim();
+
+
+            if (habilidad === "") {
+
+                alert(
+                    "Escribe una habilidad."
+                );
+
+                return;
+
+            }
+
+
+            const elemento =
+                document.createElement("span");
+
+            elemento.className =
+                "habilidad";
+
+
+            elemento.innerHTML = `
+
+                ${escapar(habilidad)}
+
+                <button
+                    class="eliminar-habilidad"
+                    onclick="eliminarElemento(this)">
+
+                    ×
+
+                </button>
+
+            `;
+
+
+            document
+                .getElementById("listaHabilidades")
+                .appendChild(elemento);
+
+
+            document.getElementById(
+                "nuevaHabilidad"
+            ).value = "";
+
+
+            cerrarFormulario("formHabilidad");
+
+
+            guardarTodo();
+
+
+            mostrarMensaje(
+                "Habilidad agregada."
+            );
+
+        }
+
+
+
+        /* =================================
+           PROYECTOS
+        ================================= */
+
+        function agregarProyecto() {
+
+            const nombre =
+                document.getElementById(
+                    "proyectoNombre"
+                ).value.trim();
+
+            const tecnologia =
+                document.getElementById(
+                    "proyectoTecnologia"
+                ).value.trim();
+
+            const descripcion =
+                document.getElementById(
+                    "proyectoDescripcion"
+                ).value.trim();
+
+            const enlace =
+                document.getElementById(
+                    "proyectoEnlace"
+                ).value.trim();
+
+
+            if (
+                nombre === "" ||
+                tecnologia === "" ||
+                descripcion === ""
+            ) {
+
+                alert(
+                    "Completa los campos del proyecto."
+                );
+
+                return;
+
+            }
+
+
+            const tarjeta =
+                document.createElement("div");
+
+            tarjeta.className = "tarjeta";
+
+
+            let enlaceHTML = "";
+
+
+            if (enlace !== "") {
+
+                enlaceHTML = `
+
+                    <br>
+
+                    <a
+                        class="boton"
+                        href="${escapar(enlace)}"
+                        target="_blank">
+
+                        Ver proyecto
+
+                    </a>
+
+                `;
+
+            }
+
+
+            tarjeta.innerHTML = `
+
+                <h3>
+                    💻 ${escapar(nombre)}
+                </h3>
+
+                <p class="fecha">
+                    Tecnología:
+                    ${escapar(tecnologia)}
+                </p>
+
+                <p>
+                    ${escapar(descripcion)}
+                </p>
+
+                ${enlaceHTML}
+
+                <br>
+
+                <button
+                    class="boton boton-eliminar"
+                    onclick="eliminarElemento(this)">
+
+                    Eliminar
+
+                </button>
+
+            `;
+
+
+            document
+                .getElementById("listaProyectos")
+                .appendChild(tarjeta);
+
+
+            limpiarCampos([
+                "proyectoNombre",
+                "proyectoTecnologia",
+                "proyectoDescripcion",
+                "proyectoEnlace"
+            ]);
+
+
+            cerrarFormulario("formProyecto");
+
+
+            guardarTodo();
+
+
+            mostrarMensaje(
+                "Proyecto agregado."
+            );
+
+        }
+
+
+
+        /* =================================
+           CONTACTO
+        ================================= */
+
+        function guardarContacto() {
+
+            const correo =
+                document.getElementById(
+                    "nuevoCorreo"
+                ).value.trim();
+
+            const telefono =
+                document.getElementById(
+                    "nuevoTelefono"
+                ).value.trim();
+
+            const ciudad =
+                document.getElementById(
+                    "nuevaCiudad"
+                ).value.trim();
+
+
+            if (
+                correo === "" ||
+                telefono === "" ||
+                ciudad === ""
+            ) {
+
+                alert(
+                    "Completa todos los datos de contacto."
+                );
+
+                return;
+
+            }
+
+
+            document.getElementById(
+                "correoContacto"
+            ).textContent = correo;
+
+
+            document.getElementById(
+                "telefonoContacto"
+            ).textContent = telefono;
+
+
+            document.getElementById(
+                "ciudadContacto"
+            ).textContent = ciudad;
+
+
+            document.getElementById(
+                "botonCorreo"
+            ).href =
+                "mailto:" + correo;
+
+
+            localStorage.setItem(
+                "correo",
+                correo
+            );
+
+            localStorage.setItem(
+                "telefono",
+                telefono
+            );
+
+            localStorage.setItem(
+                "ciudad",
+                ciudad
+            );
+
+
+            limpiarCampos([
+                "nuevoCorreo",
+                "nuevoTelefono",
+                "nuevaCiudad"
+            ]);
+
+
+            cerrarFormulario("formContacto");
+
+
+            mostrarMensaje(
+                "Información de contacto actualizada."
+            );
+
+        }
+
+
+
+        /* =================================
+           ELIMINAR ELEMENTO
+        ================================= */
+
+        function eliminarElemento(boton) {
+
+            const confirmar =
+                confirm(
+                    "¿Seguro que quieres eliminar este elemento?"
+                );
+
+
+            if (!confirmar) {
+
+                return;
+
+            }
+
+
+            const elemento =
+                boton.parentElement;
+
+
+            elemento.remove();
+
+
+            guardarTodo();
+
+
+            mostrarMensaje(
+                "Elemento eliminado."
+            );
+
+        }
+
+
+
+        /* =================================
+           LIMPIAR CAMPOS
+        ================================= */
+
+        function limpiarCampos(ids) {
+
+            ids.forEach(
+                function(id) {
+
+                    document.getElementById(
+                        id
+                    ).value = "";
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================
+           ESCAPAR TEXTO
+        ================================= */
+
+        function escapar(texto) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent = texto;
+
+            return div.innerHTML;
+
+        }
+
+
+
+        /* =================================
+           GUARDAR TODO
+        ================================= */
+
+        function guardarTodo() {
+
+            localStorage.setItem(
+                "academico",
+                document.getElementById(
+                    "listaAcademica"
+                ).innerHTML
+            );
+
+
+            localStorage.setItem(
+                "laboral",
+                document.getElementById(
+                    "listaLaboral"
+                ).innerHTML
+            );
+
+
+            localStorage.setItem(
+                "habilidades",
+                document.getElementById(
+                    "listaHabilidades"
+                ).innerHTML
+            );
+
+
+            localStorage.setItem(
+                "proyectos",
+                document.getElementById(
+                    "listaProyectos"
+                ).innerHTML
+            );
+
+        }
+
+
+
+        /* =================================
+           CARGAR INFORMACIÓN GUARDADA
+        ================================= */
+
+        function cargarTodo() {
+
+            const academico =
+                localStorage.getItem(
+                    "academico"
+                );
+
+
+            if (academico) {
+
+                document.getElementById(
+                    "listaAcademica"
+                ).innerHTML =
+                    academico;
+
+            }
+
+
+            const laboral =
+                localStorage.getItem(
+                    "laboral"
+                );
+
+
+            if (laboral) {
+
+                document.getElementById(
+                    "listaLaboral"
+                ).innerHTML =
+                    laboral;
+
+            }
+
+
+            const habilidades =
+                localStorage.getItem(
+                    "habilidades"
+                );
+
+
+            if (habilidades) {
+
+                document.getElementById(
+                    "listaHabilidades"
+                ).innerHTML =
+                    habilidades;
+
+            }
+
+
+            const proyectos =
+                localStorage.getItem(
+                    "proyectos"
+                );
+
+
+            if (proyectos) {
+
+                document.getElementById(
+                    "listaProyectos"
+                ).innerHTML =
+                    proyectos;
+
+            }
+
+
+            /* CONTACTO */
+
+            const correo =
+                localStorage.getItem(
+                    "correo"
+                );
+
+
+            const telefono =
+                localStorage.getItem(
+                    "telefono"
+                );
+
+
+            const ciudad =
+                localStorage.getItem(
+                    "ciudad"
+                );
+
+
+            if (correo) {
+
+                document.getElementById(
+                    "correoContacto"
+                ).textContent =
+                    correo;
+
+
+                document.getElementById(
+                    "botonCorreo"
+                ).href =
+                    "mailto:" + correo;
+
+            }
+
+
+            if (telefono) {
+
+                document.getElementById(
+                    "telefonoContacto"
+                ).textContent =
+                    telefono;
+
+            }
+
+
+            if (ciudad) {
+
+                document.getElementById(
+                    "ciudadContacto"
+                ).textContent =
+                    ciudad;
+
+            }
+
+        }
+
+
+
+        /* =================================
+           CARGAR AL ABRIR LA PÁGINA
+        ================================= */
+
+        window.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                cargarTodo();
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
+
+
