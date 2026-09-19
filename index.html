@@ -2,20 +2,12 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mi Portafolio</title>
 
-
     <style>
-
-        /* ================================
-           CONFIGURACIÓN GENERAL
-        ================================= */
-
         * {
             margin: 0;
             padding: 0;
@@ -32,22 +24,12 @@
             color: #1e293b;
         }
 
-
-        /* ================================
-           ENCABEZADO
-        ================================= */
+        /
 
         header {
-            background: linear-gradient(
-                135deg,
-                #2563eb,
-                #7c3aed
-            );
-
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
             color: white;
-
             text-align: center;
-
             padding: 50px 20px;
         }
 
@@ -60,34 +42,22 @@
             font-size: 20px;
         }
 
-
-        /* ================================
-           MENÚ
-        ================================= */
+        /* MENU */
 
         nav {
             background-color: #172554;
-
             padding: 18px;
-
             text-align: center;
-
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
         }
 
         nav a {
             color: white;
-
             text-decoration: none;
-
             margin: 0 10px;
-
             font-weight: bold;
-
             transition: 0.3s;
         }
 
@@ -95,54 +65,31 @@
             color: #60a5fa;
         }
 
-
-        /* ================================
-           CONTENIDO
-        ================================= */
+        /* CONTENIDO */
 
         main {
             width: 90%;
-
             max-width: 1000px;
-
             margin: 30px auto;
         }
 
-
-        /* ================================
-           SECCIONES
-        ================================= */
-
         section {
             background-color: white;
-
             padding: 30px;
-
             margin-bottom: 25px;
-
             border-radius: 15px;
-
-            box-shadow:
-                0 5px 15px
-                rgba(0, 0, 0, 0.08);
-
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             scroll-margin-top: 90px;
         }
 
         section h2 {
             color: #2563eb;
-
             margin-bottom: 20px;
-
             border-bottom: 3px solid #2563eb;
-
             padding-bottom: 8px;
         }
 
-
-        /* ================================
-           PRESENTACIÓN
-        ================================= */
+       
 
         .presentacion {
             text-align: center;
@@ -150,25 +97,17 @@
 
         .foto {
             width: 150px;
-
             height: 150px;
-
             border-radius: 50%;
-
             object-fit: cover;
-
             display: block;
-
             margin: 0 auto 20px auto;
-
             border: 5px solid #2563eb;
         }
 
         .presentacion h3 {
             font-size: 28px;
-
             color: #1e3a8a;
-
             margin-bottom: 15px;
         }
 
@@ -176,76 +115,44 @@
             line-height: 1.6;
         }
 
-
-        /* ================================
-           TARJETAS
-        ================================= */
-
+     
         .tarjetas {
             display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(250px, 1fr)
-                );
-
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
         .tarjeta {
             background-color: #eff6ff;
-
             padding: 20px;
-
             border-radius: 10px;
-
             border-left: 5px solid #2563eb;
-
             transition: 0.3s;
         }
 
         .tarjeta:hover {
             transform: translateY(-3px);
-
-            box-shadow:
-                0 5px 15px
-                rgba(37, 99, 235, 0.15);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.15);
         }
 
         .tarjeta h3 {
             color: #1e40af;
-
             margin-bottom: 10px;
         }
 
         .tarjeta p {
             line-height: 1.6;
-
             margin-bottom: 10px;
         }
 
-
-        /* ================================
-           FECHAS
-        ================================= */
-
         .fecha {
             color: #64748b;
-
             font-size: 14px;
-
             font-weight: bold;
         }
 
-
-        /* ================================
-           LISTAS
-        ================================= */
-
         .funciones {
             padding-left: 20px;
-
             margin-top: 10px;
         }
 
@@ -253,38 +160,24 @@
             margin-bottom: 6px;
         }
 
-
-        /* ================================
-           BOTONES
-        ================================= */
+       
 
         .boton {
             display: inline-block;
-
             margin-top: 15px;
-
             padding: 12px 20px;
-
             background-color: #2563eb;
-
             color: white;
-
             text-decoration: none;
-
             border: none;
-
             border-radius: 8px;
-
             cursor: pointer;
-
             font-size: 15px;
-
             transition: 0.3s;
         }
 
         .boton:hover {
             background-color: #1d4ed8;
-
             transform: translateY(-2px);
         }
 
@@ -298,7 +191,6 @@
 
         .boton-eliminar {
             background-color: #dc2626;
-
             margin-left: 5px;
         }
 
@@ -314,33 +206,19 @@
             background-color: #475569;
         }
 
-
-        /* ================================
-           CONTENEDOR DEL BOTÓN
-        ================================= */
-
         .contenedor-boton {
             text-align: center;
-
             margin-top: 25px;
         }
 
-
-        /* ================================
-           FORMULARIOS
-        ================================= */
+        
 
         .formulario {
             display: none;
-
             margin-top: 25px;
-
             padding: 25px;
-
             background-color: #eff6ff;
-
             border: 2px solid #2563eb;
-
             border-radius: 12px;
         }
 
@@ -350,17 +228,13 @@
 
         .formulario h3 {
             color: #1e40af;
-
             margin-bottom: 20px;
         }
 
         .formulario label {
             display: block;
-
             font-weight: bold;
-
             margin-bottom: 5px;
-
             color: #1e3a8a;
         }
 
@@ -368,104 +242,89 @@
         .formulario textarea,
         .formulario select {
             width: 100%;
-
             padding: 12px;
-
             margin-bottom: 15px;
-
             border: 1px solid #cbd5e1;
-
             border-radius: 8px;
-
             font-family: Arial, sans-serif;
-
             font-size: 15px;
         }
 
         .formulario textarea {
             min-height: 100px;
-
             resize: vertical;
         }
 
-
-        /* ================================
-           HABILIDADES
-        ================================= */
+        /* HABILIDADES */
 
         .habilidades {
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 10px;
         }
 
         .habilidad {
             background-color: #2563eb;
-
             color: white;
-
             padding: 10px 16px;
-
             border-radius: 20px;
-
             display: flex;
-
             align-items: center;
-
             gap: 8px;
         }
 
         .eliminar-habilidad {
             background: transparent;
-
             color: white;
-
             border: none;
-
             cursor: pointer;
-
             font-weight: bold;
-
             font-size: 16px;
         }
 
+        /* IDIOMAS */
 
-        /* ================================
-           CONTACTO
-        ================================= */
+        .idiomas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .idioma {
+            background-color: #eff6ff;
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 5px solid #2563eb;
+        }
+
+        .idioma h3 {
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .nivel {
+            color: #64748b;
+            font-weight: bold;
+        }
+
+        /* CONTACTO */
 
         .contacto p {
             margin-bottom: 12px;
         }
 
-
-        /* ================================
-           MENSAJE
-        ================================= */
+        /* MENSAJE */
 
         #mensaje {
             display: none;
-
             position: fixed;
-
             top: 20px;
-
             right: 20px;
-
             background-color: #16a34a;
-
             color: white;
-
             padding: 15px 20px;
-
             border-radius: 8px;
-
-            box-shadow:
-                0 5px 15px
-                rgba(0, 0, 0, 0.2);
-
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             z-index: 2000;
         }
 
@@ -473,27 +332,17 @@
             display: block;
         }
 
-
-        /* ================================
-           FOOTER
-        ================================= */
+        /* FOOTER */
 
         footer {
             background-color: #172554;
-
             color: white;
-
             text-align: center;
-
             padding: 25px;
-
             line-height: 1.8;
         }
 
-
-        /* ================================
-           CELULARES
-        ================================= */
+        /* CELULARES */
 
         @media (max-width: 600px) {
 
@@ -511,7 +360,6 @@
 
             nav a {
                 display: block;
-
                 margin: 10px;
             }
 
@@ -522,20 +370,13 @@
             .tarjetas {
                 grid-template-columns: 1fr;
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =================================
-         ENCABEZADO
-    ================================== -->
+    <!-- ENCABEZADO -->
 
     <header>
 
@@ -550,9 +391,7 @@
     </header>
 
 
-    <!-- =================================
-         MENÚ
-    ================================== -->
+    <!-- MENU -->
 
     <nav>
 
@@ -572,6 +411,10 @@
             Habilidades
         </a>
 
+        <a href="#idiomas">
+            Idiomas
+        </a>
+
         <a href="#proyectos">
             Proyectos
         </a>
@@ -583,16 +426,9 @@
     </nav>
 
 
-    <!-- =================================
-         CONTENIDO PRINCIPAL
-    ================================== -->
-
     <main>
 
-
-        <!-- =================================
-             PRESENTACIÓN
-        ================================== -->
+        <!-- PRESENTACIÓN -->
 
         <section
             id="presentacion"
@@ -602,36 +438,43 @@
                 Presentación
             </h2>
 
+            <!-- Puedes cambiar esta imagen por una foto tuya -->
+
             <img
                 class="foto"
                 src="https://i.pravatar.cc/160?img=12"
                 alt="Foto de perfil">
 
-
             <h3>
-                Hola, soy Juan
+                Hola, soy TU NOMBRE
             </h3>
 
             <p>
-                Soy estudiante de desarrollo de software,
+                Soy estudiante de Desarrollo de Software,
                 interesado en la tecnología y el desarrollo web.
             </p>
 
             <br>
 
             <p>
-                En este portafolio encontrarás información
-                sobre mi formación académica, experiencia,
-                habilidades, proyectos y contacto.
+                Actualmente estoy fortaleciendo mis conocimientos
+                en HTML, CSS, JavaScript, Python, bases de datos
+                y otras tecnologías relacionadas con el desarrollo
+                de software.
+            </p>
+
+            <br>
+
+            <p>
+                En este portafolio encontrarás información sobre
+                mi formación académica, experiencia, habilidades,
+                idiomas, proyectos y datos de contacto.
             </p>
 
         </section>
 
 
-
-        <!-- =================================
-             HISTORIAL ACADÉMICO
-        ================================== -->
+        <!-- HISTORIAL ACADÉMICO -->
 
         <section id="academico">
 
@@ -639,11 +482,9 @@
                 Historial Académico
             </h2>
 
-
             <div
                 class="tarjetas"
                 id="listaAcademica">
-
 
                 <div class="tarjeta">
 
@@ -656,13 +497,12 @@
                     </p>
 
                     <p>
-                        Actualmente estudio Desarrollo de Software,
-                        adquiriendo conocimientos en programación,
-                        bases de datos y desarrollo web.
+                        Estudios relacionados con programación,
+                        desarrollo web, bases de datos y
+                        desarrollo de software.
                     </p>
 
                 </div>
-
 
                 <div class="tarjeta">
 
@@ -681,7 +521,6 @@
                     </p>
 
                 </div>
-
 
             </div>
 
@@ -709,7 +548,6 @@
                     Agregar formación académica
                 </h3>
 
-
                 <label>
                     Título o estudio
                 </label>
@@ -719,7 +557,6 @@
                     id="academicoTitulo"
                     placeholder="Ej: Ingeniería de Sistemas">
 
-
                 <label>
                     Institución
                 </label>
@@ -727,8 +564,7 @@
                 <input
                     type="text"
                     id="academicoInstitucion"
-                    placeholder="Ej: Universidad ABC">
-
+                    placeholder="Ej: Universidad">
 
                 <label>
                     Año o período
@@ -739,16 +575,13 @@
                     id="academicoFecha"
                     placeholder="Ej: 2024 - 2026">
 
-
                 <label>
                     Descripción
                 </label>
 
                 <textarea
                     id="academicoDescripcion"
-                    placeholder="Describe tus estudios">
-                </textarea>
-
+                    placeholder="Describe tus estudios"></textarea>
 
                 <button
                     class="boton"
@@ -757,7 +590,6 @@
                     Guardar
 
                 </button>
-
 
                 <button
                     class="boton boton-cancelar"
@@ -772,10 +604,7 @@
         </section>
 
 
-
-        <!-- =================================
-             HISTORIAL LABORAL
-        ================================== -->
+        <!-- HISTORIAL LABORAL -->
 
         <section id="experiencia">
 
@@ -783,11 +612,9 @@
                 Historial Laboral
             </h2>
 
-
             <div
                 class="tarjetas"
                 id="listaLaboral">
-
 
                 <div class="tarjeta">
 
@@ -796,14 +623,14 @@
                     </h3>
 
                     <p class="fecha">
-                        Empresa XYZ | 2025 - 2026
+                        Empresa / Proyecto
                     </p>
 
                     <p>
-                        Apoyo en actividades relacionadas con
-                        mantenimiento de equipos y soporte tecnológico.
+                        Experiencia relacionada con mantenimiento
+                        de equipos, soporte tecnológico y
+                        actividades informáticas.
                     </p>
-
 
                     <strong>
                         Funciones:
@@ -826,46 +653,6 @@
                     </ul>
 
                 </div>
-
-
-                <div class="tarjeta">
-
-                    <h3>
-                        Practicante de Desarrollo Web
-                    </h3>
-
-                    <p class="fecha">
-                        Proyecto académico | 2026
-                    </p>
-
-                    <p>
-                        Participación en la creación de páginas
-                        web utilizando HTML, CSS y JavaScript.
-                    </p>
-
-
-                    <strong>
-                        Funciones:
-                    </strong>
-
-                    <ul class="funciones">
-
-                        <li>
-                            Creación de páginas HTML.
-                        </li>
-
-                        <li>
-                            Diseño con CSS.
-                        </li>
-
-                        <li>
-                            Programación con JavaScript.
-                        </li>
-
-                    </ul>
-
-                </div>
-
 
             </div>
 
@@ -893,7 +680,6 @@
                     Agregar experiencia laboral
                 </h3>
 
-
                 <label>
                     Cargo
                 </label>
@@ -902,7 +688,6 @@
                     type="text"
                     id="laboralCargo"
                     placeholder="Ej: Auxiliar de Sistemas">
-
 
                 <label>
                     Empresa
@@ -913,7 +698,6 @@
                     id="laboralEmpresa"
                     placeholder="Ej: Empresa ABC">
 
-
                 <label>
                     Fecha
                 </label>
@@ -923,16 +707,13 @@
                     id="laboralFecha"
                     placeholder="Ej: 2026 - 2027">
 
-
                 <label>
                     Descripción
                 </label>
 
                 <textarea
                     id="laboralDescripcion"
-                    placeholder="Describe tu experiencia">
-                </textarea>
-
+                    placeholder="Describe tu experiencia"></textarea>
 
                 <label>
                     Funciones
@@ -940,9 +721,7 @@
 
                 <textarea
                     id="laboralFunciones"
-                    placeholder="Escribe las funciones separadas por comas">
-                </textarea>
-
+                    placeholder="Escribe las funciones separadas por comas"></textarea>
 
                 <button
                     class="boton"
@@ -951,7 +730,6 @@
                     Guardar
 
                 </button>
-
 
                 <button
                     class="boton boton-cancelar"
@@ -966,10 +744,7 @@
         </section>
 
 
-
-        <!-- =================================
-             HABILIDADES
-        ================================== -->
+        <!-- HABILIDADES -->
 
         <section id="habilidades">
 
@@ -977,11 +752,9 @@
                 Mis Habilidades
             </h2>
 
-
             <div
                 class="habilidades"
                 id="listaHabilidades">
-
 
                 <span class="habilidad">
                     HTML
@@ -1015,7 +788,6 @@
                     Resolución de problemas
                 </span>
 
-
             </div>
 
 
@@ -1042,7 +814,6 @@
                     Agregar habilidad
                 </h3>
 
-
                 <label>
                     Nueva habilidad
                 </label>
@@ -1052,7 +823,6 @@
                     id="nuevaHabilidad"
                     placeholder="Ej: React">
 
-
                 <button
                     class="boton"
                     onclick="agregarHabilidad()">
@@ -1060,7 +830,6 @@
                     Agregar
 
                 </button>
-
 
                 <button
                     class="boton boton-cancelar"
@@ -1075,10 +844,139 @@
         </section>
 
 
+        <!-- IDIOMAS -->
 
-        <!-- =================================
-             PROYECTOS
-        ================================== -->
+        <section id="idiomas">
+
+            <h2>
+                Idiomas
+            </h2>
+
+            <div
+                class="idiomas"
+                id="listaIdiomas">
+
+                <div class="idioma">
+
+                    <h3>
+                        Español
+                    </h3>
+
+                    <p class="nivel">
+                        Nativo
+                    </p>
+
+                </div>
+
+                <div class="idioma">
+
+                    <h3>
+                        Inglés
+                    </h3>
+
+                    <p class="nivel">
+                        Nivel básico
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contenedor-boton">
+
+                <button
+                    class="boton boton-agregar"
+                    onclick="mostrarFormulario('formIdioma')">
+
+                    + Agregar idioma
+
+                </button>
+
+            </div>
+
+
+            <!-- FORMULARIO IDIOMA -->
+
+            <div
+                id="formIdioma"
+                class="formulario">
+
+                <h3>
+                    Agregar idioma
+                </h3>
+
+                <label>
+                    Idioma
+                </label>
+
+                <input
+                    type="text"
+                    id="idiomaNombre"
+                    placeholder="Ej: Inglés">
+
+                <label>
+                    Nivel
+                </label>
+
+                <select id="idiomaNivel">
+
+                    <option value="">
+                        Selecciona un nivel
+                    </option>
+
+                    <option value="A1">
+                        A1 - Básico
+                    </option>
+
+                    <option value="A2">
+                        A2 - Básico
+                    </option>
+
+                    <option value="B1">
+                        B1 - Intermedio
+                    </option>
+
+                    <option value="B2">
+                        B2 - Intermedio
+                    </option>
+
+                    <option value="C1">
+                        C1 - Avanzado
+                    </option>
+
+                    <option value="C2">
+                        C2 - Avanzado
+                    </option>
+
+                    <option value="Nativo">
+                        Nativo
+                    </option>
+
+                </select>
+
+                <button
+                    class="boton"
+                    onclick="agregarIdioma()">
+
+                    Guardar
+
+                </button>
+
+                <button
+                    class="boton boton-cancelar"
+                    onclick="cerrarFormulario('formIdioma')">
+
+                    Cancelar
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROYECTOS -->
 
         <section id="proyectos">
 
@@ -1086,17 +984,19 @@
                 Mis Proyectos
             </h2>
 
-
             <div
                 class="tarjetas"
                 id="listaProyectos">
-
 
                 <div class="tarjeta">
 
                     <h3>
                         🌐 Página Web
                     </h3>
+
+                    <p class="fecha">
+                        HTML y CSS
+                    </p>
 
                     <p>
                         Proyecto de creación de una página web
@@ -1105,12 +1005,15 @@
 
                 </div>
 
-
                 <div class="tarjeta">
 
                     <h3>
                         💻 Proyecto de Programación
                     </h3>
+
+                    <p class="fecha">
+                        JavaScript / Python
+                    </p>
 
                     <p>
                         Desarrollo de un proyecto académico
@@ -1119,12 +1022,15 @@
 
                 </div>
 
-
                 <div class="tarjeta">
 
                     <h3>
                         🗄️ Base de Datos
                     </h3>
+
+                    <p class="fecha">
+                        Bases de Datos
+                    </p>
 
                     <p>
                         Proyecto para almacenar y administrar
@@ -1132,7 +1038,6 @@
                     </p>
 
                 </div>
-
 
             </div>
 
@@ -1160,7 +1065,6 @@
                     Agregar proyecto
                 </h3>
 
-
                 <label>
                     Nombre del proyecto
                 </label>
@@ -1169,7 +1073,6 @@
                     type="text"
                     id="proyectoNombre"
                     placeholder="Ej: Sistema de ventas">
-
 
                 <label>
                     Tecnología utilizada
@@ -1180,16 +1083,13 @@
                     id="proyectoTecnologia"
                     placeholder="Ej: HTML, CSS, JavaScript">
 
-
                 <label>
                     Descripción
                 </label>
 
                 <textarea
                     id="proyectoDescripcion"
-                    placeholder="Describe tu proyecto">
-                </textarea>
-
+                    placeholder="Describe tu proyecto"></textarea>
 
                 <label>
                     Enlace del proyecto
@@ -1200,7 +1100,6 @@
                     id="proyectoEnlace"
                     placeholder="https://...">
 
-
                 <button
                     class="boton"
                     onclick="agregarProyecto()">
@@ -1208,7 +1107,6 @@
                     Guardar
 
                 </button>
-
 
                 <button
                     class="boton boton-cancelar"
@@ -1223,10 +1121,7 @@
         </section>
 
 
-
-        <!-- =================================
-             CONTACTO
-        ================================== -->
+        <!-- CONTACTO -->
 
         <section
             id="contacto"
@@ -1235,7 +1130,6 @@
             <h2>
                 Contacto
             </h2>
-
 
             <div id="datosContacto">
 
@@ -1246,10 +1140,9 @@
                     </strong>
 
                     <span id="correoContacto">
-                        juan@email.com
+                        tu-correo@email.com
                     </span>
                 </p>
-
 
                 <p>
                     📱
@@ -1262,7 +1155,6 @@
                     </span>
                 </p>
 
-
                 <p>
                     📍
                     <strong>
@@ -1270,17 +1162,16 @@
                     </strong>
 
                     <span id="ciudadContacto">
-                        Colombia
+                        Cali, Colombia
                     </span>
                 </p>
 
             </div>
 
-
             <a
                 id="botonCorreo"
                 class="boton"
-                href="mailto:juan@email.com">
+                href="mailto:tu-correo@email.com">
 
                 Contactarme
 
@@ -1293,7 +1184,7 @@
                     class="boton boton-agregar"
                     onclick="mostrarFormulario('formContacto')">
 
-                    + Agregar / Editar contacto
+                    + Editar contacto
 
                 </button>
 
@@ -1310,7 +1201,6 @@
                     Información de contacto
                 </h3>
 
-
                 <label>
                     Correo electrónico
                 </label>
@@ -1319,7 +1209,6 @@
                     type="email"
                     id="nuevoCorreo"
                     placeholder="Ej: correo@gmail.com">
-
 
                 <label>
                     Teléfono
@@ -1330,7 +1219,6 @@
                     id="nuevoTelefono"
                     placeholder="Ej: +57 300 000 0000">
 
-
                 <label>
                     Ciudad
                 </label>
@@ -1340,7 +1228,6 @@
                     id="nuevaCiudad"
                     placeholder="Ej: Cali, Colombia">
 
-
                 <button
                     class="boton"
                     onclick="guardarContacto()">
@@ -1348,7 +1235,6 @@
                     Guardar contacto
 
                 </button>
-
 
                 <button
                     class="boton boton-cancelar"
@@ -1362,29 +1248,22 @@
 
         </section>
 
-
     </main>
 
 
-
-    <!-- =================================
-         MENSAJE
-    ================================== -->
+    <!-- MENSAJE -->
 
     <div id="mensaje">
         Información guardada correctamente.
     </div>
 
 
-
-    <!-- =================================
-         FOOTER
-    ================================== -->
+    <!-- FOOTER -->
 
     <footer>
 
         <p>
-            © 2026 Juan - Mi Portafolio
+            © 2026 TU NOMBRE - Mi Portafolio
         </p>
 
         <p>
@@ -1394,17 +1273,11 @@
     </footer>
 
 
-
-    <!-- =================================
-         JAVASCRIPT
-    ================================== -->
+    <!-- JAVASCRIPT -->
 
     <script>
 
-
-        /* =================================
-           MOSTRAR FORMULARIO
-        ================================= */
+        /* MOSTRAR FORMULARIO */
 
         function mostrarFormulario(id) {
 
@@ -1417,13 +1290,10 @@
                 behavior: "smooth",
                 block: "center"
             });
-
         }
 
 
-        /* =================================
-           CERRAR FORMULARIO
-        ================================= */
+        /* CERRAR FORMULARIO */
 
         function cerrarFormulario(id) {
 
@@ -1431,13 +1301,10 @@
                 document.getElementById(id);
 
             formulario.classList.remove("mostrar");
-
         }
 
 
-        /* =================================
-           MENSAJE
-        ================================= */
+        /* MENSAJE */
 
         function mostrarMensaje(texto) {
 
@@ -1448,18 +1315,40 @@
 
             mensaje.classList.add("mostrar");
 
-            setTimeout(function() {
+            setTimeout(function () {
 
                 mensaje.classList.remove("mostrar");
 
             }, 2500);
-
         }
 
 
-        /* =================================
-           HISTORIAL ACADÉMICO
-        ================================= */
+        /* ESCAPAR TEXTO */
+
+        function escapar(texto) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent = texto;
+
+            return div.innerHTML;
+        }
+
+
+        /* LIMPIAR CAMPOS */
+
+        function limpiarCampos(ids) {
+
+            ids.forEach(function (id) {
+
+                document.getElementById(id).value = "";
+
+            });
+        }
+
+
+        /* HISTORIAL ACADÉMICO */
 
         function agregarAcademico() {
 
@@ -1496,7 +1385,6 @@
                 );
 
                 return;
-
             }
 
 
@@ -1528,7 +1416,6 @@
                     Eliminar
 
                 </button>
-
             `;
 
 
@@ -1536,10 +1423,7 @@
                 .getElementById("listaAcademica")
                 .appendChild(tarjeta);
 
-
             cerrarFormulario("formAcademico");
-
-            guardarTodo();
 
             limpiarCampos([
                 "academicoTitulo",
@@ -1548,17 +1432,15 @@
                 "academicoDescripcion"
             ]);
 
+            guardarTodo();
+
             mostrarMensaje(
                 "Formación académica agregada."
             );
-
         }
 
 
-
-        /* =================================
-           HISTORIAL LABORAL
-        ================================= */
+        /* HISTORIAL LABORAL */
 
         function agregarLaboral() {
 
@@ -1601,33 +1483,27 @@
                 );
 
                 return;
-
             }
 
 
             const listaFunciones =
                 funciones.split(",");
 
-
             let funcionesHTML = "";
 
 
-            listaFunciones.forEach(
-                function(funcion) {
+            listaFunciones.forEach(function (funcion) {
 
-                    if (funcion.trim() !== "") {
+                if (funcion.trim() !== "") {
 
-                        funcionesHTML +=
-                            `<li>
-                                ${escapar(
-                                    funcion.trim()
-                                )}
-                            </li>`;
-
-                    }
-
+                    funcionesHTML += `
+                        <li>
+                            ${escapar(funcion.trim())}
+                        </li>
+                    `;
                 }
-            );
+
+            });
 
 
             const tarjeta =
@@ -1667,7 +1543,6 @@
                     Eliminar
 
                 </button>
-
             `;
 
 
@@ -1675,9 +1550,7 @@
                 .getElementById("listaLaboral")
                 .appendChild(tarjeta);
 
-
             cerrarFormulario("formLaboral");
-
 
             limpiarCampos([
                 "laboralCargo",
@@ -1687,21 +1560,15 @@
                 "laboralFunciones"
             ]);
 
-
             guardarTodo();
-
 
             mostrarMensaje(
                 "Experiencia laboral agregada."
             );
-
         }
 
 
-
-        /* =================================
-           HABILIDADES
-        ================================= */
+        /* HABILIDADES */
 
         function agregarHabilidad() {
 
@@ -1718,7 +1585,6 @@
                 );
 
                 return;
-
             }
 
 
@@ -1740,7 +1606,6 @@
                     ×
 
                 </button>
-
             `;
 
 
@@ -1753,24 +1618,95 @@
                 "nuevaHabilidad"
             ).value = "";
 
-
             cerrarFormulario("formHabilidad");
 
-
             guardarTodo();
-
 
             mostrarMensaje(
                 "Habilidad agregada."
             );
-
         }
 
 
+        /* IDIOMAS */
 
-        /* =================================
-           PROYECTOS
-        ================================= */
+        function agregarIdioma() {
+
+            const nombre =
+                document.getElementById(
+                    "idiomaNombre"
+                ).value.trim();
+
+            const nivel =
+                document.getElementById(
+                    "idiomaNivel"
+                ).value;
+
+
+            if (
+                nombre === "" ||
+                nivel === ""
+            ) {
+
+                alert(
+                    "Completa el idioma y su nivel."
+                );
+
+                return;
+            }
+
+
+            const elemento =
+                document.createElement("div");
+
+            elemento.className =
+                "idioma";
+
+
+            elemento.innerHTML = `
+
+                <h3>
+                    ${escapar(nombre)}
+                </h3>
+
+                <p class="nivel">
+                    ${escapar(nivel)}
+                </p>
+
+                <button
+                    class="boton boton-eliminar"
+                    onclick="eliminarElemento(this)">
+
+                    Eliminar
+
+                </button>
+            `;
+
+
+            document
+                .getElementById("listaIdiomas")
+                .appendChild(elemento);
+
+
+            limpiarCampos([
+                "idiomaNombre"
+            ]);
+
+            document.getElementById(
+                "idiomaNivel"
+            ).value = "";
+
+            cerrarFormulario("formIdioma");
+
+            guardarTodo();
+
+            mostrarMensaje(
+                "Idioma agregado."
+            );
+        }
+
+
+        /* PROYECTOS */
 
         function agregarProyecto() {
 
@@ -1806,14 +1742,7 @@
                 );
 
                 return;
-
             }
-
-
-            const tarjeta =
-                document.createElement("div");
-
-            tarjeta.className = "tarjeta";
 
 
             let enlaceHTML = "";
@@ -1822,8 +1751,6 @@
             if (enlace !== "") {
 
                 enlaceHTML = `
-
-                    <br>
 
                     <a
                         class="boton"
@@ -1835,8 +1762,14 @@
                     </a>
 
                 `;
-
             }
+
+
+            const tarjeta =
+                document.createElement("div");
+
+            tarjeta.className =
+                "tarjeta";
 
 
             tarjeta.innerHTML = `
@@ -1865,7 +1798,6 @@
                     Eliminar
 
                 </button>
-
             `;
 
 
@@ -1881,24 +1813,17 @@
                 "proyectoEnlace"
             ]);
 
-
             cerrarFormulario("formProyecto");
 
-
             guardarTodo();
-
 
             mostrarMensaje(
                 "Proyecto agregado."
             );
-
         }
 
 
-
-        /* =================================
-           CONTACTO
-        ================================= */
+        /* CONTACTO */
 
         function guardarContacto() {
 
@@ -1929,7 +1854,6 @@
                 );
 
                 return;
-
             }
 
 
@@ -1950,8 +1874,7 @@
 
             document.getElementById(
                 "botonCorreo"
-            ).href =
-                "mailto:" + correo;
+            ).href = "mailto:" + correo;
 
 
             localStorage.setItem(
@@ -1983,14 +1906,10 @@
             mostrarMensaje(
                 "Información de contacto actualizada."
             );
-
         }
 
 
-
-        /* =================================
-           ELIMINAR ELEMENTO
-        ================================= */
+        /* ELIMINAR */
 
         function eliminarElemento(boton) {
 
@@ -2001,70 +1920,24 @@
 
 
             if (!confirmar) {
-
                 return;
-
             }
 
 
             const elemento =
                 boton.parentElement;
 
-
             elemento.remove();
 
-
             guardarTodo();
-
 
             mostrarMensaje(
                 "Elemento eliminado."
             );
-
         }
 
 
-
-        /* =================================
-           LIMPIAR CAMPOS
-        ================================= */
-
-        function limpiarCampos(ids) {
-
-            ids.forEach(
-                function(id) {
-
-                    document.getElementById(
-                        id
-                    ).value = "";
-
-                }
-            );
-
-        }
-
-
-
-        /* =================================
-           ESCAPAR TEXTO
-        ================================= */
-
-        function escapar(texto) {
-
-            const div =
-                document.createElement("div");
-
-            div.textContent = texto;
-
-            return div.innerHTML;
-
-        }
-
-
-
-        /* =================================
-           GUARDAR TODO
-        ================================= */
+        /* GUARDAR TODO */
 
         function guardarTodo() {
 
@@ -2093,19 +1966,23 @@
 
 
             localStorage.setItem(
+                "idiomas",
+                document.getElementById(
+                    "listaIdiomas"
+                ).innerHTML
+            );
+
+
+            localStorage.setItem(
                 "proyectos",
                 document.getElementById(
                     "listaProyectos"
                 ).innerHTML
             );
-
         }
 
 
-
-        /* =================================
-           CARGAR INFORMACIÓN GUARDADA
-        ================================= */
+        /* CARGAR INFORMACIÓN */
 
         function cargarTodo() {
 
@@ -2114,13 +1991,11 @@
                     "academico"
                 );
 
-
             if (academico) {
 
                 document.getElementById(
                     "listaAcademica"
-                ).innerHTML =
-                    academico;
+                ).innerHTML = academico;
 
             }
 
@@ -2130,13 +2005,11 @@
                     "laboral"
                 );
 
-
             if (laboral) {
 
                 document.getElementById(
                     "listaLaboral"
-                ).innerHTML =
-                    laboral;
+                ).innerHTML = laboral;
 
             }
 
@@ -2146,13 +2019,25 @@
                     "habilidades"
                 );
 
-
             if (habilidades) {
 
                 document.getElementById(
                     "listaHabilidades"
-                ).innerHTML =
-                    habilidades;
+                ).innerHTML = habilidades;
+
+            }
+
+
+            const idiomas =
+                localStorage.getItem(
+                    "idiomas"
+                );
+
+            if (idiomas) {
+
+                document.getElementById(
+                    "listaIdiomas"
+                ).innerHTML = idiomas;
 
             }
 
@@ -2162,13 +2047,11 @@
                     "proyectos"
                 );
 
-
             if (proyectos) {
 
                 document.getElementById(
                     "listaProyectos"
-                ).innerHTML =
-                    proyectos;
+                ).innerHTML = proyectos;
 
             }
 
@@ -2180,12 +2063,10 @@
                     "correo"
                 );
 
-
             const telefono =
                 localStorage.getItem(
                     "telefono"
                 );
-
 
             const ciudad =
                 localStorage.getItem(
@@ -2197,15 +2078,12 @@
 
                 document.getElementById(
                     "correoContacto"
-                ).textContent =
-                    correo;
-
+                ).textContent = correo;
 
                 document.getElementById(
                     "botonCorreo"
                 ).href =
                     "mailto:" + correo;
-
             }
 
 
@@ -2213,9 +2091,7 @@
 
                 document.getElementById(
                     "telefonoContacto"
-                ).textContent =
-                    telefono;
-
+                ).textContent = telefono;
             }
 
 
@@ -2223,34 +2099,25 @@
 
                 document.getElementById(
                     "ciudadContacto"
-                ).textContent =
-                    ciudad;
-
+                ).textContent = ciudad;
             }
 
         }
 
 
-
-        /* =================================
-           CARGAR AL ABRIR LA PÁGINA
-        ================================= */
+        /* CARGAR AL ABRIR */
 
         window.addEventListener(
             "DOMContentLoaded",
-            function() {
+            function () {
 
                 cargarTodo();
 
             }
         );
 
-
     </script>
-
 
 </body>
 
 </html>
-
-
